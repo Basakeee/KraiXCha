@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed;
     public int maxHP;
     public int curHP;
-    private Rigidbody2D rb;
 
     [Header("Bubble Settings")]
     public int bubbleCharge;
@@ -18,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Raycast Settings")]
     public float checkRange;
     public Vector2 OFFSET;
-    public Vector3 offset => OFFSET;
     public bool canCharge;
     public LayerMask mask;
 
@@ -39,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float timeToChange;
     public float maxGravitySpeed;
-    private float ratio;
 
     [Header("Player Score")]
     public Transform startPos;
@@ -51,6 +48,12 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask hitMask;
     public bool canHit;
 
+    [Header("Bubble Sprite")]
+    public SpriteRenderer bubbleRenderer;
+
+    private float ratio;
+    private Rigidbody2D rb;
+    private Vector3 offset => OFFSET;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -65,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         maxGravitySpeed = 2;
         radius = 0.4f;
         canHit = true;
+        bubbleRenderer = transform.Find("Bubble").GetComponent<SpriteRenderer>();
     }
 
     private async void Update()
@@ -75,6 +79,19 @@ public class PlayerMovement : MonoBehaviour
         PlayerDepthHandle();
         GravityHandle();
         await OnTakeDMG();
+        BubbleShow();
+    }
+
+    private void BubbleShow()
+    {
+        if (bubbleReady)
+        {
+            bubbleRenderer.enabled = true;
+        }
+        else if (!bubbleReady)
+        {
+            bubbleRenderer.enabled = false;
+        }
     }
 
     private async Task OnTakeDMG()
@@ -188,6 +205,20 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.linearVelocityX = Input.GetAxisRaw("Horizontal") * playerSpeed;
+        ClampPosition();
+    }
+    private void ClampPosition()
+    {
+        // Get the player's current position
+        Vector3 clampedPosition = rb.position;
+
+        // Clamp the X and Y coordinates
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, 
+            SpawnManager.instance.referenceCamera.ViewportToWorldPoint(new Vector3(SpawnManager.instance.minSpawnRange,0,0)).x,
+            SpawnManager.instance.referenceCamera.ViewportToWorldPoint(new Vector3(SpawnManager.instance.maxSpawnRange, 0, 0)).x);
+
+        // Apply the clamped position back to the Rigidbody2D
+        rb.position = clampedPosition;
     }
     private void OnDrawGizmos()
     {
