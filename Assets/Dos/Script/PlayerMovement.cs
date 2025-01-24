@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Gravity Scale")]
     public float ascendGravity;
     public float descendGravity;
+    public float baseGravity;
 
     public float timeToChange;
     public float maxGravitySpeed;
@@ -118,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
     private void GravityHandle()
     {
         ratio = curDepth / 10000f;
-        descendGravity = 0.1f + ratio * (maxGravitySpeed - 0.1f);
+        descendGravity = baseGravity + ratio * (maxGravitySpeed - baseGravity);
 
         if (curDepth <= 10000)
         {

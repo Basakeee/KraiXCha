@@ -353,6 +353,7 @@ MonoBehaviour:
   - {fileID: 5192595039973375276, guid: edb4b7f6e91c44747bbebd70b8b788ad, type: 3}
   - {fileID: 5192595039973375276, guid: e29891e241027f9468a76662ece5e78e, type: 3}
   - {fileID: 5192595039973375276, guid: 46515a4f764d1694daf9525125eb79dd, type: 3}
+  safeSpawnAmount: 3
   platformScale: {x: 3, y: 1}
   minSpawnRange: 0
   maxSpawnRange: 0
@@ -477,7 +478,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34
+  field of view: 48.6
   orthographic: 1
   orthographic size: 4.8
   m_Depth: -1
@@ -504,7 +505,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.112, z: -10}
+  m_LocalPosition: {x: 0, y: -1.9200001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -771,7 +772,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 34
+    FieldOfView: 48.6
     OrthographicSize: 4.8
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -799,7 +800,7 @@ Transform:
   m_GameObject: {fileID: 767203159}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.112, z: -10}
+  m_LocalPosition: {x: 0, y: -1.9200001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -820,10 +821,10 @@ MonoBehaviour:
   CameraDistance: 10
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: 0, y: -0.22}
+    ScreenPosition: {x: 0, y: -0.2}
     DeadZone:
       Enabled: 1
-      Size: {x: 0.55, y: 0.31}
+      Size: {x: 0.48, y: 0.49}
     HardLimits:
       Enabled: 1
       Size: {x: 0.8, y: 0.62}
@@ -856,6 +857,10 @@ PrefabInstance:
       propertyPath: startPos
       value: 
       objectReference: {fileID: 87047717}
+    - target: {fileID: 1625642038922011563, guid: 91ca596e7f03182478b8c1e4949826ca, type: 3}
+      propertyPath: baseGravity
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1625642038922011563, guid: 91ca596e7f03182478b8c1e4949826ca, type: 3}
       propertyPath: mask.m_Bits
       value: 64
