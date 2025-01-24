@@ -4,7 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class Go2Main : MonoBehaviour
 {
-   
+   public void Exit()
+    {
+        Application.Quit();
+        Debug.Log("Exit");
+    }    
     public void GotoMain()
     {
         SceneManager.LoadScene(0);
