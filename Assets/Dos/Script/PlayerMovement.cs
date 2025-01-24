@@ -55,6 +55,16 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         curHP = maxHP;
+        playerSpeed = 8;
+        maxBubbleCharge = 5;
+        checkRange = 1.25f;
+        HurtAmount = 1;
+        RegenAmount = 1;
+        ascendGravity = -0.5f;
+        timeToChange = 2;
+        maxGravitySpeed = 2;
+        radius = 0.4f;
+        canHit = true;
     }
 
     private async void Update()
