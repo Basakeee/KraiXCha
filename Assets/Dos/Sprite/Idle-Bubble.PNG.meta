@@ -1,0 +1,320 @@
+fileFormatVersion: 2
+guid: 1878e2939bf47a546875d154a49550e1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6439981956514838126
+    second: Idle-Bubble_0
+  - first:
+      213: 1350620393042710331
+    second: Idle-Bubble_1
+  - first:
+      213: -4722220836185074916
+    second: Idle-Bubble_2
+  - first:
+      213: 2921458545601679013
+    second: Idle-Bubble_3
+  - first:
+      213: 8675453668882510056
+    second: Idle-Bubble_4
+  - first:
+      213: -5761090964993237728
+    second: Idle-Bubble_5
+  - first:
+      213: 5120451584815682356
+    second: Idle-Bubble_6
+  - first:
+      213: 5664191162050732271
+    second: Idle-Bubble_7
+  - first:
+      213: 2870143298448079356
+    second: Idle-Bubble_8
+  - first:
+      213: -3809526201893896250
+    second: Idle-Bubble_9
+  - first:
+      213: -1752662574521798587
+    second: Idle-Bubble_10
+  - first:
+      213: -9005338256015423476
+    second: Idle-Bubble_11
+  - first:
+      213: 7224599740258857039
+    second: Idle-Bubble_12
+  - first:
+      213: 4012571383027732818
+    second: Idle-Bubble_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Idle-Bubble_1
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 307
+        width: 1483
+        height: 1423
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3f85b1771e5eb210800000000000000
+      internalID: 1350620393042710331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-Bubble_3
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 258
+        width: 1398
+        height: 1497
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae0e94911b1b8820800000000000000
+      internalID: 2921458545601679013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-Bubble_4
+      rect:
+        serializedVersion: 2
+        x: 4246
+        y: 306
+        width: 1490
+        height: 1403
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e0f917b527656870800000000000000
+      internalID: 8675453668882510056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-Bubble_5
+      rect:
+        serializedVersion: 2
+        x: 6253
+        y: 276
+        width: 1445
+        height: 1421
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d9dd87a4e7c00b0800000000000000
+      internalID: -5761090964993237728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-Bubble_6
+      rect:
+        serializedVersion: 2
+        x: 8269
+        y: 263
+        width: 1441
+        height: 1468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433568a469f7f0740800000000000000
+      internalID: 5120451584815682356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-Bubble_7
+      rect:
+        serializedVersion: 2
+        x: 10289
+        y: 294
+        width: 1407
+        height: 1421
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe0e0f90adf3b9e40800000000000000
+      internalID: 5664191162050732271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-Bubble_8
+      rect:
+        serializedVersion: 2
+        x: 12269
+        y: 276
+        width: 1441
+        height: 1432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf9377e8f1cc4d720800000000000000
+      internalID: 2870143298448079356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: dff7025827b5e6a438ccce85209f299b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Idle-Bubble_1: 1350620393042710331
+      Idle-Bubble_3: 2921458545601679013
+      Idle-Bubble_4: 8675453668882510056
+      Idle-Bubble_5: -5761090964993237728
+      Idle-Bubble_6: 5120451584815682356
+      Idle-Bubble_7: 5664191162050732271
+      Idle-Bubble_8: 2870143298448079356
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

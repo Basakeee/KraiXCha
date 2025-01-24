@@ -1,0 +1,571 @@
+fileFormatVersion: 2
+guid: c63638559f9f3ae4cb032bd681365bf1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8258780045207505322
+    second: Pop-Bubble (1)_0
+  - first:
+      213: -593360423883061449
+    second: Pop-Bubble (1)_1
+  - first:
+      213: 1768148765681183644
+    second: Pop-Bubble (1)_2
+  - first:
+      213: 5597787452600151921
+    second: Pop-Bubble (1)_3
+  - first:
+      213: -6674015406649257427
+    second: Pop-Bubble (1)_4
+  - first:
+      213: 2435031711633283636
+    second: Pop-Bubble (1)_5
+  - first:
+      213: 2613135431859198301
+    second: Pop-Bubble (1)_6
+  - first:
+      213: 2725180065598553967
+    second: Pop-Bubble (1)_7
+  - first:
+      213: 1758893560934087978
+    second: Pop-Bubble (1)_8
+  - first:
+      213: 3319726899094198432
+    second: Pop-Bubble (1)_9
+  - first:
+      213: 895166049260875315
+    second: Pop-Bubble (1)_10
+  - first:
+      213: -6849310779071202128
+    second: Pop-Bubble (1)_11
+  - first:
+      213: 967784381124912308
+    second: Pop-Bubble (1)_12
+  - first:
+      213: -6464448969951261627
+    second: Pop-Bubble (1)_13
+  - first:
+      213: 54573092734482982
+    second: Pop-Bubble (1)_14
+  - first:
+      213: 4745707509150206194
+    second: Pop-Bubble (1)_15
+  - first:
+      213: -2956463527911719585
+    second: Pop-Bubble (1)_16
+  - first:
+      213: -59121618141214541
+    second: Pop-Bubble (1)_17
+  - first:
+      213: -3234597284543056833
+    second: Pop-Bubble (1)_18
+  - first:
+      213: -4060069779711234183
+    second: Pop-Bubble (1)_19
+  - first:
+      213: -5979529362340752055
+    second: Pop-Bubble (1)_20
+  - first:
+      213: -5670735899362367748
+    second: Pop-Bubble (1)_21
+  - first:
+      213: -3536961552313856952
+    second: Pop-Bubble (1)_22
+  - first:
+      213: 5591111726073820625
+    second: Pop-Bubble (1)_23
+  - first:
+      213: 9104443657136912042
+    second: Pop-Bubble (1)_24
+  - first:
+      213: 8077673894358081232
+    second: Pop-Bubble (1)_25
+  - first:
+      213: -601754100049770295
+    second: Pop-Bubble (1)_26
+  - first:
+      213: -4490011017880908456
+    second: Pop-Bubble (1)_27
+  - first:
+      213: -324168186062988590
+    second: Pop-Bubble (1)_28
+  - first:
+      213: -8947709300723773306
+    second: Pop-Bubble (1)_29
+  - first:
+      213: -6792187312244004666
+    second: Pop-Bubble (1)_30
+  - first:
+      213: -6391010743959411401
+    second: Pop-Bubble (1)_31
+  - first:
+      213: -1636446626195721981
+    second: Pop-Bubble (1)_32
+  - first:
+      213: -2815222825118411196
+    second: Pop-Bubble (1)_33
+  - first:
+      213: 3514141583789824408
+    second: Pop-Bubble (1)_34
+  - first:
+      213: 8348766898799097012
+    second: Pop-Bubble (1)_35
+  - first:
+      213: 143722831822285440
+    second: Pop-Bubble (1)_36
+  - first:
+      213: 8962931123877426202
+    second: Pop-Bubble (1)_37
+  - first:
+      213: 2527173371147880057
+    second: Pop-Bubble (1)_38
+  - first:
+      213: 2831094589828446373
+    second: Pop-Bubble (1)_39
+  - first:
+      213: -4272102790458660680
+    second: Pop-Bubble (1)_40
+  - first:
+      213: 1645823022674584822
+    second: Pop-Bubble (1)_41
+  - first:
+      213: -641297076323993615
+    second: Pop-Bubble (1)_42
+  - first:
+      213: 4288479628808227790
+    second: Pop-Bubble (1)_43
+  - first:
+      213: 1508270841142587665
+    second: Pop-Bubble (1)_44
+  - first:
+      213: -7825187026805265835
+    second: Pop-Bubble (1)_45
+  - first:
+      213: -7211519187592457307
+    second: Pop-Bubble (1)_46
+  - first:
+      213: -8165061725538460490
+    second: Pop-Bubble (1)_47
+  - first:
+      213: -4502977322365437196
+    second: Pop-Bubble (1)_48
+  - first:
+      213: -6051587064101741410
+    second: Pop-Bubble (1)_49
+  - first:
+      213: 5654598545651855802
+    second: Pop-Bubble (1)_50
+  - first:
+      213: -5235706657365925164
+    second: Pop-Bubble (1)_51
+  - first:
+      213: -2530559461990427002
+    second: Pop-Bubble (1)_52
+  - first:
+      213: 6164359928400278888
+    second: Pop-Bubble (1)_53
+  - first:
+      213: -1219981397500063856
+    second: Pop-Bubble (1)_54
+  - first:
+      213: 4469287813499960023
+    second: Pop-Bubble (1)_55
+  - first:
+      213: -4732086150669083379
+    second: Pop-Bubble (1)_56
+  - first:
+      213: -4882520159554979151
+    second: Pop-Bubble (1)_57
+  - first:
+      213: -492116323775486440
+    second: Pop-Bubble (1)_58
+  - first:
+      213: -9103184421520780200
+    second: Pop-Bubble (1)_59
+  - first:
+      213: 541836480032455465
+    second: Pop-Bubble (1)_60
+  - first:
+      213: 8506496195054007028
+    second: Pop-Bubble (1)_61
+  - first:
+      213: 1061558961823038570
+    second: Pop-Bubble (1)_62
+  - first:
+      213: -686557877503423337
+    second: Pop-Bubble (1)_63
+  - first:
+      213: 1169394228496200462
+    second: Pop-Bubble (1)_64
+  - first:
+      213: 2203393465019019460
+    second: Pop-Bubble (1)_65
+  - first:
+      213: -2385888681756696009
+    second: Pop-Bubble (1)_66
+  - first:
+      213: 8266388006902016338
+    second: Pop-Bubble (1)_67
+  - first:
+      213: 8690044508273678476
+    second: Pop-Bubble (1)_68
+  - first:
+      213: 7184093310782658160
+    second: Pop-Bubble (1)_69
+  - first:
+      213: -2172835725494450094
+    second: Pop-Bubble (1)_70
+  - first:
+      213: -4886024809131889138
+    second: Pop-Bubble (1)_71
+  - first:
+      213: -763997907486731741
+    second: Pop-Bubble (1)_72
+  - first:
+      213: 1986532293492035635
+    second: Pop-Bubble (1)_73
+  - first:
+      213: -3380997761596834011
+    second: Pop-Bubble (1)_74
+  - first:
+      213: -8578999728398182065
+    second: Pop-Bubble (1)_75
+  - first:
+      213: -5253602105653609769
+    second: Pop-Bubble (1)_76
+  - first:
+      213: -2184194495608722838
+    second: Pop-Bubble (1)_77
+  - first:
+      213: 6216712272556290636
+    second: Pop-Bubble (1)_78
+  - first:
+      213: 7734837075189250832
+    second: Pop-Bubble (1)_79
+  - first:
+      213: 4655782478573095427
+    second: Pop-Bubble (1)_80
+  - first:
+      213: 7643133989952007476
+    second: Pop-Bubble (1)_81
+  - first:
+      213: -6415884818579616058
+    second: Pop-Bubble (1)_82
+  - first:
+      213: -7477107380901286413
+    second: Pop-Bubble (1)_83
+  - first:
+      213: -8130439897123933795
+    second: Pop-Bubble (1)_84
+  - first:
+      213: -5267830232354477880
+    second: Pop-Bubble (1)_85
+  - first:
+      213: -7823792567344555830
+    second: Pop-Bubble (1)_86
+  - first:
+      213: 5157801123988444683
+    second: Pop-Bubble (1)_87
+  - first:
+      213: -5194430467112013449
+    second: Pop-Bubble (1)_88
+  - first:
+      213: -2099593898545764523
+    second: Pop-Bubble (1)_89
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pop-Bubble (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1800
+        height: 1800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12598c9a903a6954298841984fa7c4ab
+      internalID: 838558842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pop-Bubble (1)_1
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 1800
+        height: 1800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d71b4c18c307f47803ceae2d3bf56c
+      internalID: 791171263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pop-Bubble (1)_2
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 1800
+        height: 1800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3f8e89ce7c6a24db53af33b45bdbef
+      internalID: -506564690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pop-Bubble (1)_3
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 0
+        width: 1800
+        height: 1800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a5f564e55c177479b746c36b61c75b
+      internalID: -2121088922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pop-Bubble (1)_4
+      rect:
+        serializedVersion: 2
+        x: 7200
+        y: 0
+        width: 1800
+        height: 1800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea1ee36c6d8e9e4a929090ffda54c67
+      internalID: 1851472747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pop-Bubble (1)_5
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 0
+        width: 1800
+        height: 1800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dcbd41da6397d8499212e85a0866479
+      internalID: -836303735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pop-Bubble (1)_6
+      rect:
+        serializedVersion: 2
+        x: 10800
+        y: 0
+        width: 1800
+        height: 1800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82b18947433e15458f6fd6c73f3695b
+      internalID: -2146858365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pop-Bubble (1)_7
+      rect:
+        serializedVersion: 2
+        x: 12600
+        y: 0
+        width: 1800
+        height: 1800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da259aef138e07d4dbeb86886f24992b
+      internalID: -796334313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 81ee2226aebf749428af0398dd4d3aed
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pop-Bubble (1)_0: 838558842
+      Pop-Bubble (1)_1: 791171263
+      Pop-Bubble (1)_2: -506564690
+      Pop-Bubble (1)_3: -2121088922
+      Pop-Bubble (1)_4: 1851472747
+      Pop-Bubble (1)_5: -836303735
+      Pop-Bubble (1)_6: -2146858365
+      Pop-Bubble (1)_7: -796334313
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

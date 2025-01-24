@@ -49,9 +49,9 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask hitMask;
     public bool canHit;
 
-    [Header("Bubble Sprite")]
+    [Header("Bubble Bubbles")]
     public SpriteRenderer bubbleRenderer;
-
+    public Animator bubbleAnim;
     private float ratio;
     private Rigidbody2D rb;
     private Vector3 offset => OFFSET;
@@ -89,10 +89,6 @@ public class PlayerMovement : MonoBehaviour
         {
             bubbleRenderer.enabled = true;
         }
-        else if (!bubbleReady)
-        {
-            bubbleRenderer.enabled = false;
-        }
     }
 
     private async Task OnTakeDMG()
@@ -104,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 bubbleReady = false;
                 bubbleCharge = 0;
+                bubbleRenderer.gameObject.GetComponent<BubbleAnimationController>().GotPOP();
                 canHit = false;
                 rb.linearVelocityY = 0;
                 rb.gravityScale = descendGravity;
@@ -196,13 +193,13 @@ public class PlayerMovement : MonoBehaviour
                 {
                     bubbleReady = true;
                     bubbleCharge = maxBubbleCharge;
+                    bubbleRenderer.gameObject.GetComponent<BubbleAnimationController>().StartBubbleAnimation();
                 }
             }
         }
         else
             Debug.DrawRay(transform.position + offset, Vector3.down * checkRange, Color.red);
     }
-
     void FixedUpdate()
     {
         rb.linearVelocityX = Input.GetAxisRaw("Horizontal") * playerSpeed;
