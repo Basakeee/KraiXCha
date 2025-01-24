@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 316027821}
   - component: {fileID: 316027820}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,13 +262,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316027818}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.9988104, z: 0, w: 0.04876263}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 528029697}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -174.41, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 750, y: 0}
@@ -287,14 +287,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2146ccb2970737e4a853c0498b0da211, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -898,6 +898,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 1625642038922011563, guid: 91ca596e7f03182478b8c1e4949826ca, type: 3}
+      propertyPath: bubbleRenderer
+      value: 
+      objectReference: {fileID: 1068339364}
+    - target: {fileID: 1625642038922011563, guid: 91ca596e7f03182478b8c1e4949826ca, type: 3}
       propertyPath: maxGravitySpeed
       value: 1.25
       objectReference: {fileID: 0}
@@ -950,6 +954,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91ca596e7f03182478b8c1e4949826ca, type: 3}
+--- !u!212 &1068339364 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6761851029008307989, guid: 91ca596e7f03182478b8c1e4949826ca, type: 3}
+  m_PrefabInstance: {fileID: 1068339363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1202621602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8161074638804297040, guid: 91ca596e7f03182478b8c1e4949826ca, type: 3}
@@ -1044,7 +1053,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1715548547}
   - component: {fileID: 1715548546}
-  - component: {fileID: 1715548548}
   m_Layer: 0
   m_Name: Bg
   m_TagString: Untagged
@@ -1095,7 +1103,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 40acb037a96f52f49b303389d7e6dd55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1122,21 +1130,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1715548548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715548544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2ee1477baa025f498d7aad87716b236, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levels: []
-  choke: 0
-  scrollSpeed: 0
 --- !u!1 &1716201474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1142,7 @@ GameObject:
   - component: {fileID: 1716201477}
   - component: {fileID: 1716201476}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1187,14 +1180,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3f827648b21f31c49a888b362374e56d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
