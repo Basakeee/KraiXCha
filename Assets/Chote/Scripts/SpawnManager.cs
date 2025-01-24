@@ -18,6 +18,8 @@ public class SpawnManager : MonoBehaviour
 
     //Store all platform
     public List<GameObject> platforms;
+    public int safeSpawnAmount = 3;
+    int safeSpawnCount = 0;
     List<GameObject> spawnedObstacles;
     public Vector2 platformScale = new Vector2(1f, 1f);
     Vector3 lastObstacleSpawnPos;
@@ -104,8 +106,21 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnPlatform(Vector3 spawnPos)
     {
-        GameObject spawnedPlatform = Instantiate(platforms[Random.Range(0, platforms.Count)], spawnPos, Quaternion.identity);
-        spawnedObstacles.Add(spawnedPlatform);
+        if (safeSpawnCount % safeSpawnAmount == 0 && safeSpawnCount != 0)
+        {
+            GameObject spawnedPlatform = Instantiate(platforms[Random.Range(1, platforms.Count)], spawnPos, Quaternion.identity);
+            safeSpawnCount = 0;
+            spawnedObstacles.Add(spawnedPlatform);
+        }
+        else
+        {
+            GameObject spawnedPlatform = Instantiate(platforms[0], spawnPos, Quaternion.identity);
+            spawnedObstacles.Add(spawnedPlatform);
+        }
+
+        safeSpawnCount += Random.Range(0,3);
+        
+
     }
 
     void SpawnEnemies(Vector3 spawnPos)
