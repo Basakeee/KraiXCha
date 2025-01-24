@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
     private void GravityHandle()
     {
         ratio = curDepth / 10000f;
-        descendGravity = 0.5f + ratio * (maxGravitySpeed - 0.5f);
+        descendGravity = 0.1f + ratio * (maxGravitySpeed - 0.1f);
 
         if (curDepth <= 10000)
         {
