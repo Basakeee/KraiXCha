@@ -150,16 +150,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1000334389}
   referenceCamera: {fileID: 968973824}
-  spaceBetweenPlatform: 3
+  spaceBetweenPlatform: 5
   distanceToOptimize: 50
   enemies:
   - {fileID: 2412867023859984308, guid: 5e372b0b522fb1f43994e181e0c7e5f8, type: 3}
-  enemySpawnChance: 25
+  enemySpawnChance: 10
   platforms:
   - {fileID: 5192595039973375276, guid: 9b36f6d4d752cba4d93ca4a1839163a0, type: 3}
   - {fileID: 5192595039973375276, guid: edb4b7f6e91c44747bbebd70b8b788ad, type: 3}
   - {fileID: 5192595039973375276, guid: e29891e241027f9468a76662ece5e78e, type: 3}
   - {fileID: 5192595039973375276, guid: 46515a4f764d1694daf9525125eb79dd, type: 3}
+  safeSpawnAmount: 3
   platformScale: {x: 3, y: 1}
   minSpawnRange: 0
   maxSpawnRange: 0
