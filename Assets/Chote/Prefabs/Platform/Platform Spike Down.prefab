@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6595553901781443348}
   - component: {fileID: 4194735408826723071}
   - component: {fileID: 3037523112429855294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform Spike Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 3498646933064480456}
   - component: {fileID: 3447932939707586890}
   - component: {fileID: 9076440995764023487}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spike Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
