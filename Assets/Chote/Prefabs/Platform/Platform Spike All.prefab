@@ -975,7 +975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5055486582644009520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spike Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1670,7 +1670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7070248155384186422}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spike Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
