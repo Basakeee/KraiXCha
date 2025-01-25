@@ -15,15 +15,14 @@ public class BubbleAnimationController : MonoBehaviour
     public void StartBubbleAnimation()
     {
         anim.enabled = true;
-        Debug.LogWarning("GOT CALLED");
     }
     public void GotPOP()
     {
         anim.SetTrigger("POP");
-        Debug.LogWarning("GOT POP");
     }
     public void HideSprite()
     {
+        anim.Play("BlubBlub", 0, 0);
         sr.enabled = false;
         anim.enabled = false;
     }
