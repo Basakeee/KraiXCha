@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float checkRange;
     public Vector2 OFFSET;
     public bool canCharge;
+    public bool landSound;
     public LayerMask mask;
 
     [Header("Additional Setting")]
@@ -52,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Bubble Bubbles")]
     public SpriteRenderer bubbleRenderer;
     public Animator bubbleAnim;
+
+    [Header("Player Animation")]
+    public Animator playerAnimator;
+    public float moveMagnitude;
+
     private float ratio;
     private Rigidbody2D rb;
     private Vector3 offset => OFFSET;
@@ -59,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Time.timeScale = 1;
         rb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
         curHP = maxHP;
         playerSpeed = 8;
         maxBubbleCharge = 5;
@@ -109,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
                 canHit = false;
                 rb.linearVelocityY = 0;
                 rb.gravityScale = descendGravity;
+                //AudioSetting.Instance.PlaySFX("hit");
                 await Task.Delay(1500);
                 canHit = true;
                 return;
@@ -145,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
         if (curDepth > PlayerPrefs.GetInt("maxDepth"))
         {
             maxDepth = curDepth;
-            PlayerPrefs.SetInt("maxDepth",maxDepth);
+            PlayerPrefs.SetInt("maxDepth", maxDepth);
         }
     }
 
@@ -154,6 +162,10 @@ public class PlayerMovement : MonoBehaviour
         if (curHP == 0)
         {
             Time.timeScale = 0f;
+        }
+        else if (curHP > 0)
+        {
+            Time.timeScale = 1f;
         }
         else if (curHP > 0)
         {
@@ -196,33 +208,75 @@ public class PlayerMovement : MonoBehaviour
         if (canCharge)
         {
             Debug.DrawRay(transform.position + offset, Vector3.down * checkRange, Color.green);
+            if (!landSound)
+            {
+                //AudioSetting.Instance.PlaySFX("LandingSound");
+                Debug.Log("Landing");
+                landSound = true;
+            }
             if (Input.GetKeyDown(KeyCode.Z) && curHP > 0)
             {
                 bubbleCharge++;
                 if (bubbleCharge >= maxBubbleCharge)
                 {
+                    //AudioSetting.Instance.PlaySFX("BubbleBlow");
                     bubbleReady = true;
                     bubbleCharge = maxBubbleCharge;
                     bubbleRenderer.gameObject.GetComponent<BubbleAnimationController>().StartBubbleAnimation();
                 }
             }
         }
-        else
+        else if (!canCharge)
+        {
             Debug.DrawRay(transform.position + offset, Vector3.down * checkRange, Color.red);
+            landSound = false;
+        }
     }
     void FixedUpdate()
     {
         rb.linearVelocityX = Input.GetAxisRaw("Horizontal") * playerSpeed;
+        //if (Input.GetAxisRaw("Horizontal") != 0 && canCharge)// && !AudioSetting.Instance.sfxSource.isPlaying)
+        //AudioSetting.Instance.PlaySFX("Walk");
+        PlayerAnimation();
+
         ClampPosition();
     }
+
+    private void PlayerAnimation()
+    {
+        moveMagnitude = Input.GetAxisRaw("Horizontal");
+        float targetMagnitude = Mathf.Abs(moveMagnitude);
+        float currentMagnitude = playerAnimator.GetFloat("movement");
+
+        // Smoothly transition between current and target movement values
+        float smoothedMagnitude = Mathf.Lerp(currentMagnitude, targetMagnitude, Time.deltaTime * 10);
+
+        playerAnimator.SetFloat("movement", smoothedMagnitude);
+        FlipSprite();
+    }
+
+    private void FlipSprite()
+    {
+        if (moveMagnitude < 0)
+        {
+            // Ensure the sprite is flipped to face left
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else if (moveMagnitude > 0)
+        {
+            // Ensure the sprite is facing right
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+    }
+
     private void ClampPosition()
     {
         // Get the player's current position
         Vector3 clampedPosition = rb.position;
 
         // Clamp the X and Y coordinates
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, 
-            SpawnManager.instance.referenceCamera.ViewportToWorldPoint(new Vector3(SpawnManager.instance.minSpawnRange,0,0)).x,
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x,
+            SpawnManager.instance.referenceCamera.ViewportToWorldPoint(new Vector3(SpawnManager.instance.minSpawnRange, 0, 0)).x,
             SpawnManager.instance.referenceCamera.ViewportToWorldPoint(new Vector3(SpawnManager.instance.maxSpawnRange, 0, 0)).x);
 
         // Apply the clamped position back to the Rigidbody2D
