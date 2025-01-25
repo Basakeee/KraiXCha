@@ -44,8 +44,8 @@ public class SpawnManager : MonoBehaviour
         if (instance) Debug.LogWarning("There is more than 1 instance of Platform Spawn Manager in the scene! REMOVE THE EXTRA");
         instance = this;
 
-        SetAllPlatformScale(platformScale);
-        SetAllEnemiesScale(enemyScale);
+        
+        
 
         spawnedObstacles = new List<GameObject>();
         lastObstacleSpawnPos = Vector3.zero;
@@ -112,12 +112,14 @@ public class SpawnManager : MonoBehaviour
         if (safeSpawnCount % safeSpawnAmount == 0 && safeSpawnCount != 0)
         {
             GameObject spawnedPlatform = Instantiate(platforms[Random.Range(1, platforms.Count)], spawnPos, Quaternion.identity);
+            SetAllPlatformScale(platformScale,spawnedPlatform);
             safeSpawnCount = 0;
             spawnedObstacles.Add(RandomScale(scaleVariance,spawnedPlatform));
         }
         else
         {
             GameObject spawnedPlatform = Instantiate(platforms[0], spawnPos, Quaternion.identity);
+            SetAllPlatformScale(platformScale,spawnedPlatform);
             spawnedObstacles.Add(RandomScale(scaleVariance,spawnedPlatform));
         }
 
@@ -143,6 +145,7 @@ public class SpawnManager : MonoBehaviour
     void SpawnEnemies(Vector3 spawnPos)
     {
         GameObject spawnedEnemy = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPos, Quaternion.identity);
+        SetAllEnemiesScale(enemyScale,spawnedEnemy);
         spawnedObstacles.Add(spawnedEnemy);
     }
 
@@ -163,25 +166,21 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    void SetAllPlatformScale(Vector2 scale)
+    void SetAllPlatformScale(Vector2 scale,GameObject gameObject)
     {
-        foreach (GameObject platform in platforms)
-        {
-            Sprite sprite = platform.GetComponentInChildren<SpriteRenderer>().sprite;
-            float baseScaleZ = platform.transform.localScale.z;
+            Sprite sprite = gameObject.GetComponentInChildren<SpriteRenderer>().sprite;
+            float baseScaleZ = gameObject.transform.localScale.z;
 
-            platform.transform.localScale = new Vector3(scale.x / sprite.bounds.size.x, scale.y, baseScaleZ);
-        }
+            gameObject.transform.localScale = new Vector3(scale.x / sprite.bounds.size.x, scale.y, baseScaleZ);
+        
     }
 
 
-    void SetAllEnemiesScale(Vector2 scale)
+    void SetAllEnemiesScale(Vector2 scale,GameObject gameObject)
     {
-        foreach (GameObject enemy in enemies)
-        {
-            float baseScaleZ = enemy.transform.localScale.z;
+            float baseScaleZ = gameObject.transform.localScale.z;
 
-            enemy.transform.localScale = new Vector3(scale.x, scale.y, baseScaleZ);
-        }
+            gameObject.transform.localScale = new Vector3(scale.x, scale.y, baseScaleZ);
+        
     }
 }
