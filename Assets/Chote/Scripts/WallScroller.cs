@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class WallScroller : MonoBehaviour
 {
-    [SerializeField] private RawImage img;
+    private RawImage img;
     public float scrollFactor = 20f;
 
     PlayerMovement player;
@@ -11,6 +11,7 @@ public class WallScroller : MonoBehaviour
     private void Start()
     {
         player = FindAnyObjectByType<PlayerMovement>();
+        img = GetComponent<RawImage>();
     }
 
     private void Update()
