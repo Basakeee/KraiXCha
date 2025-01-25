@@ -69,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+        VideoController.instance.PlayVideo(0);
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         curHP = maxHP;
@@ -87,17 +88,20 @@ public class PlayerMovement : MonoBehaviour
 
     private async void Update()
     {
-        BubbleCharge();
-        await HurtandRegen();
-        HandleDeath();
-        PlayerDepthHandle();
-        GravityHandle();
-        await OnTakeDMG();
-        BubbleShow();
-        if (Input.GetKeyDown(KeyCode.F))
+        if (VideoController.instance.isEnd)
         {
-            Time.timeScale = 1;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            BubbleCharge();
+            await HurtandRegen();
+            HandleDeath();
+            PlayerDepthHandle();
+            GravityHandle();
+            await OnTakeDMG();
+            BubbleShow();
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 
@@ -118,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
                 bubbleReady = false;
                 bubbleCharge = 0;
                 bubbleRenderer.gameObject.GetComponent<BubbleAnimationController>().GotPOP();
+                playerAnimator.SetBool("hasBubble", false);
                 canHit = false;
                 rb.linearVelocityY = 0;
                 rb.gravityScale = descendGravity;
@@ -224,12 +229,10 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Z) && curHP > 0)
             {
                 bubbleCharge++;
-                if (bubbleCharge >= maxBubbleCharge)
+                if (bubbleCharge >= maxBubbleCharge && !bubbleReady)
                 {
                     //AudioSetting.Instance.PlaySFX("BubbleBlow");
-                    bubbleReady = true;
-                    bubbleCharge = maxBubbleCharge;
-                    bubbleRenderer.gameObject.GetComponent<BubbleAnimationController>().StartBubbleAnimation();
+                    playerAnimator.SetTrigger("BlowTrigger");
                 }
             }
         }
@@ -239,6 +242,15 @@ public class PlayerMovement : MonoBehaviour
             landSound = false;
         }
     }
+
+    public void BlowBubbleTrigger()
+    {
+        bubbleReady = true;
+        bubbleCharge = maxBubbleCharge;
+        bubbleRenderer.gameObject.GetComponent<BubbleAnimationController>().StartBubbleAnimation();
+        playerAnimator.SetBool("hasBubble",bubbleReady);
+    }
+
     void FixedUpdate()
     {
         rb.linearVelocityX = Input.GetAxisRaw("Horizontal") * playerSpeed;
@@ -252,15 +264,21 @@ public class PlayerMovement : MonoBehaviour
     private void PlayerAnimation()
     {
         moveMagnitude = Input.GetAxisRaw("Horizontal");
-        float targetMagnitude = Mathf.Abs(moveMagnitude);
+
+        // Normalize to a range [0, 1]
+        float normalizedMagnitude = Mathf.Clamp01(Mathf.Abs(moveMagnitude));
+
+        float targetMagnitude = normalizedMagnitude; // Use normalized value
         float currentMagnitude = playerAnimator.GetFloat("movement");
 
         // Smoothly transition between current and target movement values
         float smoothedMagnitude = Mathf.Lerp(currentMagnitude, targetMagnitude, Time.deltaTime * 10);
 
         playerAnimator.SetFloat("movement", smoothedMagnitude);
+        playerAnimator.SetFloat("veloY", rb.linearVelocity.y);
         FlipSprite();
     }
+
 
     private void FlipSprite()
     {

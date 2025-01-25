@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
+  m_Name: Blowing
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 4591251940068232211, guid: 7170a3e377bfeaa499ffd8921ec6ef33, type: 3}
+      value: {fileID: -1001742687537659513, guid: 938c0f7d39cbb3f46adfb9bd302a28bf, type: 3}
     - time: 0.083333336
-      value: {fileID: -8153280995561855356, guid: ba74419ddb3d4434aa05fc26d6b739cd, type: 3}
+      value: {fileID: -453653033467080661, guid: 165488ec3f0d0c844b23f553afccd756, type: 3}
     - time: 0.16666667
-      value: {fileID: -8153280995561855356, guid: ba74419ddb3d4434aa05fc26d6b739cd, type: 3}
+      value: {fileID: -453653033467080661, guid: 165488ec3f0d0c844b23f553afccd756, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 4591251940068232211, guid: 7170a3e377bfeaa499ffd8921ec6ef33, type: 3}
-    - {fileID: -8153280995561855356, guid: ba74419ddb3d4434aa05fc26d6b739cd, type: 3}
-    - {fileID: -8153280995561855356, guid: ba74419ddb3d4434aa05fc26d6b739cd, type: 3}
+    - {fileID: -1001742687537659513, guid: 938c0f7d39cbb3f46adfb9bd302a28bf, type: 3}
+    - {fileID: -453653033467080661, guid: 165488ec3f0d0c844b23f553afccd756, type: 3}
+    - {fileID: -453653033467080661, guid: 165488ec3f0d0c844b23f553afccd756, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -75,4 +75,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.16666667
+    functionName: BlowBubbleTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
