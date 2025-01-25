@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -57,6 +58,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Player Animation")]
     public Animator playerAnimator;
     public float moveMagnitude;
+
+    [Header("UI")]
+    public Image healthBar;
+    public float smoothSpeed;
 
     private float ratio;
     private Rigidbody2D rb;
@@ -185,6 +190,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isRegenCD = true;
             curHP = Mathf.Min(curHP + RegenAmount, maxHP);
+            healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (float)curHP / maxHP, smoothSpeed);
             await Task.Delay((int)regenCooldown * 1000);
             isRegenCD = false;
         }
@@ -196,6 +202,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isHurtCD = true;
             curHP = Mathf.Max(curHP - RegenAmount, 0);
+            healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (float)curHP / maxHP, smoothSpeed);
             await Task.Delay((int)hurtCooldown * 1000);
             isHurtCD = false;
         }
