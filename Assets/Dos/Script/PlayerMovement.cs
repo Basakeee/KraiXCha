@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 offset => OFFSET;
     void Start()
     {
+        Time.timeScale = 1;
         rb = GetComponent<Rigidbody2D>();
         curHP = maxHP;
         playerSpeed = 8;
@@ -80,6 +82,11 @@ public class PlayerMovement : MonoBehaviour
         GravityHandle();
         await OnTakeDMG();
         BubbleShow();
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     private void BubbleShow()
@@ -135,9 +142,10 @@ public class PlayerMovement : MonoBehaviour
     private void PlayerDepthHandle()
     {
         curDepth = (int)(startPos.position.y - transform.position.y);
-        if (curDepth > maxDepth)
+        if (curDepth > PlayerPrefs.GetInt("maxDepth"))
         {
             maxDepth = curDepth;
+            PlayerPrefs.SetInt("maxDepth",maxDepth);
         }
     }
 
@@ -146,7 +154,10 @@ public class PlayerMovement : MonoBehaviour
         if (curHP == 0)
         {
             Time.timeScale = 0f;
-            Debug.Log("Gameover");
+        }
+        else if (curHP > 0)
+        {
+            Time.timeScale = 1f;
         }
     }
 
