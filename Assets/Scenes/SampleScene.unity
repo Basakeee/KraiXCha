@@ -7264,7 +7264,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1841626370}
   Score: {fileID: 1895575474}
   HighScore: {fileID: 1307838458}
-  GOscore: {fileID: 0}
+  GOscore: {fileID: 540010202}
 --- !u!1 &1715548544
 GameObject:
   m_ObjectHideFlags: 0

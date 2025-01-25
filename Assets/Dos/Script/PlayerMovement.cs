@@ -109,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
                 canHit = false;
                 rb.linearVelocityY = 0;
                 rb.gravityScale = descendGravity;
+                AudioSetting.Instance.PlaySFX("hit");
                 await Task.Delay(1500);
                 canHit = true;
                 return;
@@ -205,6 +206,7 @@ public class PlayerMovement : MonoBehaviour
                 bubbleCharge++;
                 if (bubbleCharge >= maxBubbleCharge)
                 {
+                    AudioSetting.Instance.PlaySFX("BubbleBlow");
                     bubbleReady = true;
                     bubbleCharge = maxBubbleCharge;
                     bubbleRenderer.gameObject.GetComponent<BubbleAnimationController>().StartBubbleAnimation();
@@ -217,6 +219,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.linearVelocityX = Input.GetAxisRaw("Horizontal") * playerSpeed;
+        if (Input.GetAxisRaw("Horizontal") != 0 && canCharge && !AudioSetting.Instance.sfxSource.isPlaying)
+            AudioSetting.Instance.PlaySFX("Walk");
         ClampPosition();
     }
     private void ClampPosition()

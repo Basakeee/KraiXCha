@@ -17,4 +17,8 @@ public class Go2Main : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    public void GotoGame()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
