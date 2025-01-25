@@ -148,6 +148,10 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = 0f;
             Debug.Log("Gameover");
         }
+        else if (curHP > 0)
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     private async Task HurtandRegen()
