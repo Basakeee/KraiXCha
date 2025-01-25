@@ -34,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Gravity Scale")]
     public float ascendGravity;
     public float descendGravity;
-    public float baseGravity;
 
     public float timeToChange;
     public float maxGravitySpeed;
@@ -95,7 +94,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(transform.position, radius, hitMask) && canHit)
         {
-            Debug.Log("Hit");
             if (bubbleReady)
             {
                 bubbleReady = false;
@@ -115,27 +113,28 @@ public class PlayerMovement : MonoBehaviour
 
     private void GravityHandle()
     {
-        ratio = curDepth / 10000f;
-        descendGravity = baseGravity + ratio * (maxGravitySpeed - baseGravity);
+        // Calculate gravity resistance based on depth
+        ratio = curDepth / 10000f; // Ratio of current depth to max reference depth
+        descendGravity = Mathf.Lerp(0.5f, maxGravitySpeed, ratio); // Increase gravity with depth
 
-        if (curDepth <= 10000)
+        // Ascend gravity should remain consistent for smoother upward movement
+        if (bubbleReady)
         {
-            if (bubbleReady)
-                rb.gravityScale = Mathf.Lerp(rb.gravityScale, ascendGravity, timeToChange * Time.deltaTime);
-            else if (!bubbleReady)
-                rb.gravityScale = Mathf.Lerp(rb.gravityScale, descendGravity, timeToChange * Time.deltaTime);
-            //Debug.Log($"Current Gravity Scale : {rb.gravityScale}");
+            rb.gravityScale = Mathf.Lerp(rb.gravityScale, ascendGravity, timeToChange * Time.deltaTime);
         }
         else
         {
-            //Debug.Log(rb.gravityScale);
-            rb.gravityScale = 0;
+            // Use water-like behavior: resistance increases as depth increases
+            rb.gravityScale = Mathf.Lerp(rb.gravityScale, descendGravity, timeToChange * Time.deltaTime);
         }
+
+        // Cap gravity to prevent erratic behavior at extreme depths
+        rb.gravityScale = Mathf.Clamp(rb.gravityScale, -maxGravitySpeed, maxGravitySpeed);
     }
 
     private void PlayerDepthHandle()
     {
-        curDepth = (int)Mathf.Abs(startPos.position.y - transform.position.y);
+        curDepth = (int)(startPos.position.y - transform.position.y);
         if (curDepth > maxDepth)
         {
             maxDepth = curDepth;
@@ -146,6 +145,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (curHP == 0)
         {
+            Time.timeScale = 0f;
             Debug.Log("Gameover");
         }
     }
@@ -173,7 +173,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isHurtCD = true;
             curHP = Mathf.Max(curHP - RegenAmount, 0);
-            Debug.Log(curHP);
             await Task.Delay((int)hurtCooldown * 1000);
             isHurtCD = false;
         }
