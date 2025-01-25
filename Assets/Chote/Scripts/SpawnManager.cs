@@ -12,16 +12,18 @@ public class SpawnManager : MonoBehaviour
     public float spaceBetweenPlatform;
     [Min(50f)] public float distanceToOptimize;
 
-    //Choose chance to spawn enemy
+    [Header("Enemy")]
     public List<GameObject> enemies;
+    public Vector2 enemyScale = new Vector2(1f,1f);
     [Range(0f, 100f)] public float enemySpawnChance = 50f;
 
-    //Store all platform
+    [Header("Platform")]
     public List<GameObject> platforms;
     public int safeSpawnAmount = 3;
     int safeSpawnCount = 0;
     List<GameObject> spawnedObstacles;
     public Vector2 platformScale = new Vector2(1f, 1f);
+    public float scaleVariance = 1f;
     Vector3 lastObstacleSpawnPos;
 
 
@@ -43,6 +45,7 @@ public class SpawnManager : MonoBehaviour
         instance = this;
 
         SetAllPlatformScale(platformScale);
+        SetAllEnemiesScale(enemyScale);
 
         spawnedObstacles = new List<GameObject>();
         lastObstacleSpawnPos = Vector3.zero;
@@ -110,18 +113,32 @@ public class SpawnManager : MonoBehaviour
         {
             GameObject spawnedPlatform = Instantiate(platforms[Random.Range(1, platforms.Count)], spawnPos, Quaternion.identity);
             safeSpawnCount = 0;
-            spawnedObstacles.Add(spawnedPlatform);
+            spawnedObstacles.Add(RandomScale(scaleVariance,spawnedPlatform));
         }
         else
         {
             GameObject spawnedPlatform = Instantiate(platforms[0], spawnPos, Quaternion.identity);
-            spawnedObstacles.Add(spawnedPlatform);
+            spawnedObstacles.Add(RandomScale(scaleVariance,spawnedPlatform));
         }
 
-        safeSpawnCount += Random.Range(0,3);
-        
+        safeSpawnCount += Random.Range(0, 3);
 
     }
+
+    GameObject RandomScale(float scaleVariance, GameObject gameObject)
+    {
+        GameObject scaledObject = gameObject;
+        float variance = Random.Range(-scaleVariance,scaleVariance);
+
+        scaledObject.transform.localScale = new Vector3(
+            scaledObject.transform.localScale.x + variance,
+            scaledObject.transform.localScale.y,
+            scaledObject.transform.localScale.z
+            );
+
+            return scaledObject;
+    }
+
 
     void SpawnEnemies(Vector3 spawnPos)
     {
@@ -150,8 +167,21 @@ public class SpawnManager : MonoBehaviour
     {
         foreach (GameObject platform in platforms)
         {
-            Vector3 baseScale = platform.transform.localScale;
-            platform.transform.localScale = new Vector3(scale.x, scale.y, baseScale.z);
+            Sprite sprite = platform.GetComponentInChildren<SpriteRenderer>().sprite;
+            float baseScaleZ = platform.transform.localScale.z;
+
+            platform.transform.localScale = new Vector3(scale.x / sprite.bounds.size.x, scale.y, baseScaleZ);
+        }
+    }
+
+
+    void SetAllEnemiesScale(Vector2 scale)
+    {
+        foreach (GameObject enemy in enemies)
+        {
+            float baseScaleZ = enemy.transform.localScale.z;
+
+            enemy.transform.localScale = new Vector3(scale.x, scale.y, baseScaleZ);
         }
     }
 }
