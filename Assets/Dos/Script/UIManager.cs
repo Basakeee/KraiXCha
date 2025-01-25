@@ -27,6 +27,10 @@ public class UIManager : MonoBehaviour
             gameOverPanel.SetActive(true);
             HighScore.text = $"Highscore : {PlayerPrefs.GetInt("maxDepth")}";
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            VideoController.instance.TurnOffVideo();
+        }
         Score.text = $"{player.curDepth}";
         GOscore.text = Score.text ;
     }

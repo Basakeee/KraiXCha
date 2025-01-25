@@ -9,6 +9,7 @@ public class VideoController : MonoBehaviour
     public static VideoController instance;
     public GameObject videoPlayer;
     public GameObject screen;
+    public bool isEnd;
 
     [Header("Input video")]
     public List<VideoClip> videoList;
@@ -28,6 +29,7 @@ public class VideoController : MonoBehaviour
         rawImage = screen.GetComponent<RawImage>();
 
         vd.loopPointReached += OnVideoEnd;
+        PlayVideo(0);
     }
     private void OnVideoEnd(VideoPlayer vp)
     {
@@ -39,6 +41,8 @@ public class VideoController : MonoBehaviour
     {
         videoPlayer.SetActive(false);
         screen.SetActive(false);
+        isEnd = true;
+
     }
 
     public void TurnOnVideo()

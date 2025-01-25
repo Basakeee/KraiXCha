@@ -58,7 +58,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+        VideoController.instance.PlayVideo(0);
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0;
         curHP = maxHP;
         playerSpeed = 8;
         maxBubbleCharge = 5;
@@ -75,17 +77,20 @@ public class PlayerMovement : MonoBehaviour
 
     private async void Update()
     {
-        BubbleCharge();
-        await HurtandRegen();
-        HandleDeath();
-        PlayerDepthHandle();
-        GravityHandle();
-        await OnTakeDMG();
-        BubbleShow();
-        if (Input.GetKeyDown(KeyCode.F))
+        if (VideoController.instance.isEnd)
         {
-            Time.timeScale = 1;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            BubbleCharge();
+            await HurtandRegen();
+            HandleDeath();
+            PlayerDepthHandle();
+            GravityHandle();
+            await OnTakeDMG();
+            BubbleShow();
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 
