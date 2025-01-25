@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1325028264418417928, guid: 27b99bb51f463054c8e789b79405e941, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03529412, g: 0.5019608, b: 0.07450981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5535502110245434088}
   - component: {fileID: 2593517586634646381}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spike1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3406384893842964466}
   - component: {fileID: 4347291077232061633}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spike Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4026127524103966546}
   - component: {fileID: 8609846891392446137}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spike1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7236061435468597979}
   - component: {fileID: 8005931230842764852}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spike1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1905307603488687683}
   - component: {fileID: 5080255499125109690}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spike1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8011677687518413396}
   - component: {fileID: 3225890816767164926}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spike1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

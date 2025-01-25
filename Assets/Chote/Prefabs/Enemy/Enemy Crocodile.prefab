@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8955163927687229489}
   - component: {fileID: 6039578811939289182}
   - component: {fileID: 8195077550320218499}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy Crocodile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
