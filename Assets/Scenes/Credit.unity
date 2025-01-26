@@ -526,8 +526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0014648, y: -2}
-  m_SizeDelta: {x: 94.336, y: 100}
+  m_AnchoredPosition: {x: 0.0014648, y: -8.2867}
+  m_SizeDelta: {x: 94.336, y: 102.2366}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1549997947
 MonoBehaviour:
@@ -659,8 +659,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Game Design\nChiradet  Donphaiyon\n\n2D Artist & Animator\nJittipat Tapawong
-    \nGulthida Rueankham\nSupapit Poolpukdee\n\nSound Design & Sound Engineer\nPrawarit
-    Kaewtip \n\nProgrammer\nChotayakorn Duangkeow\n"
+    \nGulthida Rueankham\nPiamsiri Amaeam\nSupapit Poolpukdee\n\nSound Design & Sound
+    Engineer\nPrawarit Kaewtip \n\nProgrammer\nChawakorn Arromdee\r\nTanaphat Phomak\nChotayakorn
+    Duangkeow\n\nThank For Playing\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75cc8571be55cf5449e291954086887f, type: 2}
   m_sharedMaterial: {fileID: 5550573183842629887, guid: 75cc8571be55cf5449e291954086887f, type: 2}

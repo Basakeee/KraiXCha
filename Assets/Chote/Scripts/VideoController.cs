@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,8 +16,10 @@ public class VideoController : MonoBehaviour
     public List<VideoClip> videoList;
 
 
-    VideoPlayer vd;
+    public VideoPlayer vd;
     RawImage rawImage;
+
+    public bool isGameFinish = false;
 
     private void Awake()
     {
@@ -30,12 +33,16 @@ public class VideoController : MonoBehaviour
 
         vd.loopPointReached += OnVideoEnd;
         PlayVideo(0);
+        isEnd = false;
+        isGameFinish = false;
     }
-    private void OnVideoEnd(VideoPlayer vp)
+    public void OnVideoEnd(VideoPlayer vp)
     {
-        Debug.Log("Video finished playing!");
+
+        isGameFinish = true;
         TurnOffVideo();
     }
+
 
     public void TurnOffVideo()
     {
@@ -56,6 +63,13 @@ public class VideoController : MonoBehaviour
     {
         TurnOffVideo();
         vd.clip = videoList[index];
+        TurnOnVideo();
+    }
+
+    public void PlayVideoGameOver(int videoIndex)
+    {
+        isGameFinish = false;
+        vd.clip = videoList[videoIndex];
         TurnOnVideo();
     }
 }

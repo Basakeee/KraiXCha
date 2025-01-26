@@ -176,6 +176,7 @@ MonoBehaviour:
   checkRange: 2
   OFFSET: {x: 0, y: 0}
   canCharge: 0
+  landSound: 0
   mask:
     serializedVersion: 2
     m_Bits: 64
@@ -192,13 +193,17 @@ MonoBehaviour:
   startPos: {fileID: 0}
   curDepth: 0
   maxDepth: 0
-  radius: 0.4
+  radius: 0.46
   hitMask:
     serializedVersion: 2
     m_Bits: 128
   canHit: 1
   bubbleRenderer: {fileID: 0}
   bubbleAnim: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  moveMagnitude: 0
+  healthBar: {fileID: 0}
+  smoothSpeed: 0
 --- !u!1 &992337718771886714
 GameObject:
   m_ObjectHideFlags: 0

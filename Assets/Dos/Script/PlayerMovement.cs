@@ -66,16 +66,19 @@ public class PlayerMovement : MonoBehaviour
     private float ratio;
     private Rigidbody2D rb;
     private Vector3 offset => OFFSET;
+
+
+    private bool isEndBeforeCredit;
+
     void Start()
     {
-        Time.timeScale = 1;
-        VideoController.instance.PlayVideo(0);
+        Time.timeScale = 1f;
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0.0f; 
         playerAnimator = GetComponent<Animator>();
         curHP = maxHP;
         playerSpeed = 8;
-        maxBubbleCharge = 5;
+        maxBubbleCharge = 1;
         checkRange = 1.25f;
         HurtAmount = 1;
         RegenAmount = 1;
@@ -85,6 +88,9 @@ public class PlayerMovement : MonoBehaviour
         radius = 0.4f;
         canHit = true;
         bubbleRenderer = transform.Find("Bubble").GetComponent<SpriteRenderer>();
+
+        isEndBeforeCredit = false;
+        VideoController.instance.PlayVideo(0);
     }
 
     private async void Update()
@@ -98,15 +104,23 @@ public class PlayerMovement : MonoBehaviour
             GravityHandle();
             await OnTakeDMG();
             BubbleShow();
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.P))
             {
-                Time.timeScale = 1;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                transform.position = new Vector3(0,-12000f,transform.position.z);
             }
             if (curDepth >= 10000)
             {
-                VideoController.instance.PlayVideo(1);
-                SceneManager.LoadScene(0);
+                
+                if (VideoController.instance.isGameFinish && isEndBeforeCredit)
+                {
+                    SceneManager.LoadScene(1);
+                    return;
+                }
+                else
+                {
+                    VideoController.instance.PlayVideoGameOver(1);
+                    isEndBeforeCredit = true;
+                }
             }
         }
     }
