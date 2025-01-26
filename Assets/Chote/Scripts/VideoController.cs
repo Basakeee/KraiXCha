@@ -49,6 +49,7 @@ public class VideoController : MonoBehaviour
     {
         videoPlayer.SetActive(true);
         screen.SetActive(true);
+        isEnd = false;
     }
 
     public void PlayVideo(int index)

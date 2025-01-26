@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         Time.timeScale = 1;
         VideoController.instance.PlayVideo(0);
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0.0f; 
         playerAnimator = GetComponent<Animator>();
         curHP = maxHP;
         playerSpeed = 8;
