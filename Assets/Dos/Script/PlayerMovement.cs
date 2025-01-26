@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
                 canHit = false;
                 rb.linearVelocityY = 0;
                 rb.gravityScale = descendGravity;
-                //AudioSetting.Instance.PlaySFX("hit");
+                AudioSetting.Instance.PlaySFX("hit");
                 await Task.Delay(1500);
                 canHit = true;
                 return;
@@ -222,7 +222,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.DrawRay(transform.position + offset, Vector3.down * checkRange, Color.green);
             if (!landSound)
             {
-                //AudioSetting.Instance.PlaySFX("LandingSound");
+                AudioSetting.Instance.PlaySFX("LandingSound");
                 Debug.Log("Landing");
                 landSound = true;
             }
@@ -231,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
                 bubbleCharge++;
                 if (bubbleCharge >= maxBubbleCharge && !bubbleReady)
                 {
-                    //AudioSetting.Instance.PlaySFX("BubbleBlow");
+                    AudioSetting.Instance.PlaySFX("BubbleBlow");
                     playerAnimator.SetTrigger("BlowTrigger");
                 }
             }
@@ -254,8 +254,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.linearVelocityX = Input.GetAxisRaw("Horizontal") * playerSpeed;
-        //if (Input.GetAxisRaw("Horizontal") != 0 && canCharge)// && !AudioSetting.Instance.sfxSource.isPlaying)
-        //AudioSetting.Instance.PlaySFX("Walk");
+        if (Input.GetAxisRaw("Horizontal") != 0 && canCharge && ( !AudioSetting.Instance.sfxSource.isPlaying))
+        AudioSetting.Instance.PlaySFX("Walk");
         PlayerAnimation();
 
         ClampPosition();

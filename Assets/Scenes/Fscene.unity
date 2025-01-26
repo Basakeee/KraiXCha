@@ -1763,6 +1763,8 @@ MonoBehaviour:
     name: BubbleBlow
   - clip: {fileID: 8300000, guid: 2ca9312b61d04df45aff60efe69a4d93, type: 3}
     name: GameOver
+  - clip: {fileID: 8300000, guid: 1312fc066730d334591d4b9cb92ed04f, type: 3}
+    name: LandingSound
 --- !u!4 &782590702
 Transform:
   m_ObjectHideFlags: 0
