@@ -1395,16 +1395,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4657615781965422890, guid: 3660571d795a8444b9ccc3fcff878884, type: 3}
       propertyPath: videoList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4657615781965422890, guid: 3660571d795a8444b9ccc3fcff878884, type: 3}
       propertyPath: 'videoList.Array.data[0]'
       value: 
-      objectReference: {fileID: 32900000, guid: 5fdff80a98859f74fa76ffe8b52ce278, type: 3}
+      objectReference: {fileID: 32900000, guid: 210928779a28f5f4a826ea0044e43160, type: 3}
     - target: {fileID: 4657615781965422890, guid: 3660571d795a8444b9ccc3fcff878884, type: 3}
       propertyPath: 'videoList.Array.data[1]'
       value: 
-      objectReference: {fileID: 32900000, guid: 10300216a96685a4da6314703d9ff5a0, type: 3}
+      objectReference: {fileID: 32900000, guid: 9ae86d7b703df3942b6d5bcf30570849, type: 3}
     - target: {fileID: 6304923362498310808, guid: 3660571d795a8444b9ccc3fcff878884, type: 3}
       propertyPath: m_Name
       value: Video Canvas
@@ -1646,7 +1646,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1625642038922011563, guid: 91ca596e7f03182478b8c1e4949826ca, type: 3}
       propertyPath: maxHP
-      value: 100
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625642038922011563, guid: 91ca596e7f03182478b8c1e4949826ca, type: 3}
+      propertyPath: curDepth
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1625642038922011563, guid: 91ca596e7f03182478b8c1e4949826ca, type: 3}
       propertyPath: startPos

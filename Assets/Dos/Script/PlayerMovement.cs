@@ -103,6 +103,11 @@ public class PlayerMovement : MonoBehaviour
                 Time.timeScale = 1;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+            if (curDepth >= 10000)
+            {
+                VideoController.instance.PlayVideo(1);
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
